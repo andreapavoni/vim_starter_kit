@@ -7,7 +7,13 @@ end
 
 desc %(Bring bundles up to date)
 task :bundles do
-  sh "vim +BundleInstall +qall"
+  print "update vundle..."
+  `git submodule sync >/dev/null`
+  `git submodule update --init`
+  puts "done."
+  print "update/install bundles..."
+  `vim +BundleInstall +qall`
+  puts "done."
 end
 
 desc %(Make ~/.vimrc and ~/.gvimrc symlinks)
