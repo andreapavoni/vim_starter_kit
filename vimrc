@@ -63,8 +63,9 @@ Bundle 'vim-scripts/Conque-Shell'
 Bundle 'othree/html5.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'sjbach/lusty'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'vim-scripts/ZoomWin'
 " Bundle 'wincent/Command-T'
-
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 
