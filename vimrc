@@ -112,11 +112,11 @@ map <Leader>n :NERDTreeToggle<CR>
 map \\ :NERDTreeToggle<CR>
 
 "close NERDTree if open and delete current buffer
-function! s:bufferCloser()
+function! BufferCloser()
   NERDTreeClose
   :bdelete
 endfunction
-:noremap <C-D> :call s:bufferCloser()<CR>
+:noremap <C-D> :call BufferCloser()<CR>
 
 " NERD_commenter
 nmap <leader><space> <plug>NERDCommenterComment
