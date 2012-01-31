@@ -1,4 +1,5 @@
-/_temp
-/_backup
+/tmp
+/backup
 /doc/tags
-.netrwhist
+/bundle/*
+!/bundle/vundle

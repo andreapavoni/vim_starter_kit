@@ -1,49 +1,135 @@
-""
-"" Thanks:
+"" Vim configuration
+
+"" Credits:
 ""   Gary Bernhardt  <destroyallsoftware.com>
 ""   Drew Neil  <vimcasts.org>
 ""   Tim Pope  <tbaggery.com>
 ""   Janus  <github.com/carlhuda/janus>
+""   Mislav <mislav.uniqpath.com/2011/12/vim-revisited>
 ""
 
+" Vim stuff
 set nocompatible
 syntax enable
 set encoding=utf-8
+set fenc=utf-8
+set number
+set ruler
+let mapleader=","
+set mouse=a                       " enable mouse support
 
-call pathogen#infect()
-filetype plugin indent on
+" Load local vim config
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
 
+set visualbell                    " No beeping.
+" xterm not recognized right by vim (but not on Linux)
+set term=xterm
+"set term=builtin_ansi
+
+" Backups and swap files
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+set nobackup                      " Don't make a backup before overwriting a file.
+set nowritebackup
+
+" Color scheme
 set background=dark
-color molokai
-set nonumber
-set ruler       " show the cursor position all the time
-set cursorline
-set showcmd     " display incomplete commands
+colorscheme darkblue
 
-" Allow backgrounding buffers without writing them, and remember marks/undo
-" for backgrounded buffers
-set hidden
+" Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
 
-"" Whitespace
-set nowrap                        " don't wrap lines
-set tabstop=2                     " a tab is two spaces
-set shiftwidth=2                  " an autoindent (with <<) is two spaces
-set expandtab                     " use spaces, not tabs
-set list                          " Show invisible characters
-set backspace=indent,eol,start    " backspace through everything in insert mode
-" List chars
-set listchars=""                  " Reset the listchars
-set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
-set listchars+=trail:.            " show trailing spaces as dots
-set listchars+=extends:>          " The character to show in the last column when wrap is
-                                  " off and the line continues beyond the right of the screen
-set listchars+=precedes:<         " The character to show in the first column when wrap is
-                                  " off and the line continues beyond the left of the screen
-"" Searching
-set hlsearch                      " highlight matches
-set incsearch                     " incremental searching
-set ignorecase                    " searches are case insensitive...
-set smartcase                     " ... unless they contain at least one capital letter
+Bundle 'mileszs/ack.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-haml'
+Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'pangloss/vim-javascript'
+Bundle 'wycats/nerdtree'
+Bundle 'ddollar/nerdcommenter'
+Bundle 'tpope/vim-surround'
+Bundle 'ervandew/supertab'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-rails'
+Bundle 'taq/vim-rspec'
+Bundle 'msanders/snipmate.vim'
+Bundle 'tpope/vim-markdown'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'vim-scripts/Conque-Shell'
+Bundle 'othree/html5.vim'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'sjbach/lusty'
+" Bundle 'wincent/Command-T'
+
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+
+
+" Editing
+filetype plugin indent on
+set wrap
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set list listchars=tab:\ \ ,trail:·
+set scrolloff=3                   " provide some context when editing
+set backspace=indent,eol,start    " allow backspacing over everything in insert mode
+
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Tab completion
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc
+
+" Status bar
+set laststatus=2
+set showcmd                       " Display incomplete commands.
+
+set showmode                      " Display the mode you're in.
+set hidden                        " Handle multiple buffers better.
+set wildmenu                      " Enhanced command line completion.
+
+" ZoomWin
+map <Leader><Leader> :ZoomWin<CR>
+" Without setting this, ZoomWin restores windows in a way that causes
+" equalalways behavior to be triggered the next time CommandT is used.
+" This is likely a bludgeon to solve some other issue, but it works
+set noequalalways
+
+" NERDTree
+let NERDTreeIgnore=['\.rbc$', '\~$']
+map <Leader>n :NERDTreeToggle<CR>
+map \\ :NERDTreeToggle<CR>
+
+"close NERDTree if open and delete current buffer
+function! s:bufferCloser()
+  NERDTreeClose
+  :bdelete
+endfunction
+:noremap <C-D> :call s:bufferCloser()<CR>
+
+" NERD_commenter
+nmap <leader><space> <plug>NERDCommenterComment
+nmap <leader>cc <plug>NERDCommenterToggle
+
+" Command-T
+" let g:CommandTMaxHeight=20
+
+" CTags
+map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+
+" git status bar plugin
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+
 
 function s:setupWrapping()
   set wrap
@@ -51,9 +137,18 @@ function s:setupWrapping()
   set textwidth=72
 endfunction
 
+function! s:clearWhitespaces()
+  ma a
+  :%s/\s\+$//e
+  'a
+endfunction
+
 if has("autocmd")
   " In Makefiles, use real tabs, not tabs expanded to spaces
   au FileType make set noexpandtab
+
+  " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+  au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
   " Make sure all markdown files have the correct filetype set and setup wrapping
   au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
@@ -68,70 +163,78 @@ if has("autocmd")
   " see :help last-position-jump
   au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g`\"" | endif
+
+  " automatically clear whitespaces owhen saving buffer
+  au BufWritePre * :call s:clearWhitespaces()
+
+  " set ff=unix
+  au BufRead,BufNewFile * :set ff=unix
+
+  " use relative numbers when NOT in insert mode
+  autocmd InsertEnter * :set number
+  autocmd InsertLeave * :set relativenumber
 endif
 
-" provide some context when editing
-set scrolloff=3
+" Opens an edit command with the path of the currently edited file filled in
+" Normal mode: <Leader>e
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
-" don't use Ex mode, use Q for formatting
-map Q gq
+" Opens a tab edit command with the path of the currently edited file filled in
+" Normal mode: <Leader>t
+map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-" clear the search buffer when hitting return
-:nnoremap <CR> :nohlsearch<cr>
+" Inserts the path of the currently edited file into a command
+" Command mode: Ctrl+P
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
-let mapleader=","
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
 
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gf :CommandTFlush<cr>\|:CommandT features<cr>
-map <leader>gg :topleft 100 :split Gemfile<cr>
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-" http://vimcasts.org/e/14
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+" Use modeline overrides
+set modeline
+set modelines=10
 
-" ignore Rubinius, Sass cache files
-set wildignore+=*.rbc,*.scssc,*.sassc
+" hide highlited search
+nmap <silent> <C-N> :silent noh<CR>
 
-nnoremap <leader><leader> <c-^>
+" re-indent entire file
+map   <silent> <F5> mmgg=G'm
+imap  <silent> <F5> <Esc> mmgg=G'm
+vmap  <tab> =
+nmap  <tab> ==
 
-" find merge conflict markers
-nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+" navigate buffers
+:noremap <C-left> :bprev<CR>·
+:noremap <C-right> :bnext<CR>
 
-command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
+" disable arrow keys, use hjkl
+noremap  <Up> ""
+noremap  <Down> ""
+noremap  <Left> ""
+noremap  <Right> ""
 
-" easier navigation between split windows
+" navigate split windows
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-" disable cursor keys in normal mode
-map <Left>  :echo "no!"<cr>
-map <Right> :echo "no!"<cr>
-map <Up>    :echo "no!"<cr>
-map <Down>  :echo "no!"<cr>
+" ConqueTerm
+map <Leader>co :ConqueTerm zsh<CR>
 
-set backupdir=~/.vim/_backup    " where to put backup files.
-set directory=~/.vim/_temp      " where to put swap files.
+" LustyBuffer Explorer
+map <Leader>l :LustyBufferExplorer<CR>
 
-if has("statusline") && !&cp
-  set laststatus=2  " always show the status bar
+" CommandT
+" map <Leader>t :CommandT<CR>
+map <Leader>t :FufCoverageFile<CR>
 
-  " Start the status line
-  set statusline=%f\ %m\ %r
+" ignore Rubinius, Sass cache files
+set wildignore+=*.rbc,*.scssc,*.sassc
 
-  " Add fugitive
-  set statusline+=%{fugitive#statusline()}
-
-  " Finish the statusline
-  set statusline+=Line:%l/%L[%p%%]
-  set statusline+=Col:%v
-  set statusline+=Buf:#%n
-  set statusline+=[%b][0x%B]
-endif
-
-let g:CommandTMaxHeight=10
+" find merge conflict markers
+nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
