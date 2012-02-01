@@ -1,12 +1,5 @@
-Andrea Pavoni's vim configuration
+My vim configuration
 ==========================
-
-First of all, some credits, I learned/stolen a lot from their code/configs/tips:
-
-* [Tim Pope](http://tbaggery.com),
-* [Janus project](https://github.com/carlhuda/janus).
-* [Mislav] (mislav.uniqpath.com/2011/12/vim-revisited)
-* [Jeff Kreeftmeijer] (http://jeffkreeftmeijer.com)
 
 This configuration started as a Janus fork where I put my own configs, plugins
 and shortcuts. But I was quite unhappy with the way the plugins were managed, so
@@ -14,6 +7,13 @@ I re-started from [Mislav](https://github.com/mislav/vimfiles)'s config, adding 
 
 It uses [vundle](https://github.com/gmarik/vundle) instead of [Pathogen](https://github.com/tpope/vim-pathogen), gitmodules are handy, but I prefer
 the vundle approach.
+
+Some credits are necessary, I learned/stolen a lot from their code/configs/tips:
+
+* [Tim Pope](http://tbaggery.com),
+* [Janus project](https://github.com/carlhuda/janus).
+* [Mislav] (mislav.uniqpath.com/2011/12/vim-revisited)
+* [Jeff Kreeftmeijer] (http://jeffkreeftmeijer.com)
 
 
 ## Installation:
