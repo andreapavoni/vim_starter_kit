@@ -35,6 +35,7 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup
 
 " Color scheme
+set t_Co=256
 set background=dark
 colorscheme darkblue
 
