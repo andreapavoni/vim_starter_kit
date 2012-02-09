@@ -44,6 +44,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
@@ -82,6 +83,9 @@ set expandtab
 set list listchars=tab:\ \ ,trail:·
 set scrolloff=3                   " provide some context when editing
 set backspace=indent,eol,start    " allow backspacing over everything in insert mode
+
+" Go with smartindent if there is no plugin indent file.
+" set autoindent smartindent
 
 " Searching
 set hlsearch
