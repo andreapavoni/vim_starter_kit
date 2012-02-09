@@ -5,7 +5,8 @@ set antialias
 
 " Default gui color scheme
 set background=dark
-colorscheme vividchalk
+" colorscheme vividchalk
+colorscheme solarized
 
 " Don't beep
 set visualbell

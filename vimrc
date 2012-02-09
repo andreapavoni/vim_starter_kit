@@ -71,7 +71,7 @@ Bundle 'vim-scripts/ZoomWin'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'tsaleh/vim-matchit'
-
+Bundle 'altercation/vim-colors-solarized'
 
 " Editing
 filetype plugin indent on
