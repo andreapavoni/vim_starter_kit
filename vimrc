@@ -69,6 +69,7 @@ Bundle 'vim-scripts/ZoomWin'
 " Bundle 'wincent/Command-T'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'tsaleh/vim-matchit'
 
 
 " Editing
