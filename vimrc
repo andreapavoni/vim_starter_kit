@@ -10,34 +10,7 @@
 
 " Vim stuff
 set nocompatible
-syntax enable
-set encoding=utf-8
-set fenc=utf-8
-set number
-set ruler
-let mapleader=","
-set mouse=a                       " enable mouse support
-
-" Load local vim config
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
-
-set visualbell                    " No beeping.
-" xterm not recognized right by vim (but not on Linux)
-set term=xterm
-"set term=builtin_ansi
-
-" Backups and swap files
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
-set nobackup                      " Don't make a backup before overwriting a file.
-set nowritebackup
-
-" Color scheme
-set t_Co=256
-set background=dark
-colorscheme darkblue
+filetype off
 
 " Vundle
 set rtp+=~/.vim/bundle/vundle/
@@ -75,6 +48,36 @@ Bundle 'altercation/vim-colors-solarized'
 
 " Editing
 filetype plugin indent on
+
+syntax enable
+set encoding=utf-8
+set fenc=utf-8
+set number
+set ruler
+let mapleader=","
+set mouse=a                       " enable mouse support
+
+" Load local vim config
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
+set visualbell                    " No beeping.
+" xterm not recognized right by vim (but not on Linux)
+set term=xterm
+"set term=builtin_ansi
+
+" Backups and swap files
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+set nobackup                      " Don't make a backup before overwriting a file.
+set nowritebackup
+
+" Color scheme
+set t_Co=256
+set background=dark
+colorscheme darkblue
+
 set wrap
 set tabstop=2
 set shiftwidth=2
