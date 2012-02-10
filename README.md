@@ -48,29 +48,41 @@ I suggest to check vimrc to know the rest of shortcuts ;)
 
 ## Plugins:
 
-I use the following plugins by default, you can edit ```vimrc``` file to
+I use the following plugins by default, you can edit the bundles in ```vimrc``` file to
 add/remove them.
 
-* ack
-* FuzzyFinder
-* git
-* fugitive
-* markdown
-* nerdtree
-* nerdcommenter
-* Conque-Shell
-* ruby
-* cucumber
-* rspec
-* rails
-* haml
-* scss
-* javascript
-* coffee-script
-* ZoomWin
-* snipmate
-* html5
-* lusty (buffer explorer)
-* surround
-* supertab
+* Utils
+   * ack
+   * FuzzyFinder
+   * git
+   * fugitive
+   * nerdtree
+   * Conque-Shell
+   * powerline
+
+* Editing
+   * nerdcommenter
+   * ZooWin
+   * surround
+   * supertab
+   * snipmate
+   * lusty buffer explorer
+   * matchit
+
+* Syntaxes
+   * markdown
+   * ruby
+   * rails
+   * coffee-script
+   * javascript
+   * cucumber
+   * haml
+   * scss
+   * rspec
+   * html5
+
+* Themes
+   * solarized
+   * vividchalk
+   * vwilight
 
