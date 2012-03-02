@@ -84,5 +84,5 @@ add/remove them.
 * Themes
    * solarized
    * vividchalk
-   * vwilight
+   * mytheme (a custom name for theme generated with http://themes.sweyla.com)
 
