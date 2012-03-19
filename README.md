@@ -80,5 +80,5 @@ add/remove them.
 * Themes
    * solarized
    * vividchalk
-   * mytheme (a custom name for theme generated with http://themes.sweyla.com)
+   * vsk_dark (default vim_starter_kit theme, dark version, generated with http://themes.sweyla.com)
 

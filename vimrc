@@ -80,7 +80,7 @@ set nowritebackup
 " Color scheme
 set t_Co=256
 set background=dark
-colorscheme mytheme
+colorscheme vsk_dark
 
 set wrap
 set tabstop=2
