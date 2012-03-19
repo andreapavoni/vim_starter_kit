@@ -40,8 +40,6 @@ files inside the ".vim" directory.
 * cursor keys for movement disabled!
 * `,n` open/closes NerdTree
 * `F5` re-indent file
-* `,co` opens ConqueTerm (zsh by default)
-* `,l` open LustyBufferExplorer
 * `,cc` add comment to current (or selected) lines
 
 I suggest to check vimrc to know the rest of shortcuts ;)
@@ -57,7 +55,6 @@ add/remove them.
    * git
    * fugitive
    * nerdtree
-   * Conque-Shell
    * powerline
 
 * Editing
@@ -66,7 +63,6 @@ add/remove them.
    * surround
    * supertab
    * snipmate
-   * lusty buffer explorer
    * matchit
 
 * Syntaxes
