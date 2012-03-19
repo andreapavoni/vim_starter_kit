@@ -12,22 +12,29 @@
 set nocompatible
 filetype off
 
-" Vundle
+" START Vundle setup
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+" Utils
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-haml'
 Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'pangloss/vim-javascript'
 Bundle 'wycats/nerdtree'
 Bundle 'ddollar/nerdcommenter'
 Bundle 'tpope/vim-surround'
 Bundle 'ervandew/supertab'
+Bundle 'vim-scripts/ZoomWin'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'tsaleh/vim-matchit'
+
+" Syntaxes
+Bundle 'tpope/vim-haml'
+Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-rails'
 Bundle 'taq/vim-rspec'
@@ -37,14 +44,11 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'vim-scripts/Conque-Shell'
 Bundle 'othree/html5.vim'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'sjbach/lusty'
+
+" Themes
 Bundle 'tpope/vim-vividchalk'
-Bundle 'vim-scripts/ZoomWin'
-" Bundle 'wincent/Command-T'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'tsaleh/vim-matchit'
 Bundle 'altercation/vim-colors-solarized'
+" END Vundle setup
 
 " Editing
 filetype plugin indent on
