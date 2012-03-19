@@ -1,12 +1,11 @@
-My vim configuration
+Vim starter kit (yet another one)
 ==========================
 
 This configuration started as a Janus fork where I put my own configs, plugins
 and shortcuts. But I was quite unhappy with the way the plugins were managed, so
-I re-started from [Mislav](https://github.com/mislav/vimfiles)'s config, adding my own customizations.
+I re-started from [Mislav](https://github.com/mislav/vimfiles)'s leaner config, then I've added my own customizations, ending to a completely different result.
 
-It uses [vundle](https://github.com/gmarik/vundle) instead of [Pathogen](https://github.com/tpope/vim-pathogen), gitmodules are handy, but I prefer
-the vundle approach.
+It uses [vundle](https://github.com/gmarik/vundle) instead of [Pathogen](https://github.com/tpope/vim-pathogen), gitmodules are handy, but I prefer the vundle's approach: manage plugins by editing a file, instead of tracking external repos.
 
 Some credits are necessary, I learned/stolen a lot from their code/configs/tips:
 
@@ -14,6 +13,7 @@ Some credits are necessary, I learned/stolen a lot from their code/configs/tips:
 * [Janus project](https://github.com/carlhuda/janus).
 * [Mislav] (mislav.uniqpath.com/2011/12/vim-revisited)
 * [Jeff Kreeftmeijer] (http://jeffkreeftmeijer.com)
+* [Vimcasts] (http://vimcasts.org/)
 
 
 ## Installation:
@@ -21,7 +21,7 @@ Some credits are necessary, I learned/stolen a lot from their code/configs/tips:
 Prerequisites: ruby, git.
 
 1. Move your existing configuration somewhere else:
-   `mv ~/.vim* ~/.gvim* my_backup`
+   `mkdir ~/my_backup && mv ~/.vim* ~/.gvim* my_backup`
 2. Clone this repo into ".vim":
    `git clone https://github.com/apeacox/myvimfiles ~/.vim`
 3. Go into ".vim" and run "rake":
