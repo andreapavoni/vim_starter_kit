@@ -135,11 +135,9 @@ endfunction
 nmap <leader><space> <plug>NERDCommenterComment
 nmap <leader>cc <plug>NERDCommenterToggle
 
-" Command-T
-" let g:CommandTMaxHeight=20
-
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <Leader>brt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
 
 " git status bar plugin
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
