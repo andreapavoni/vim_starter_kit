@@ -24,12 +24,6 @@ if filereadable(expand("~/.gvimrc.local"))
   source ~/.gvimrc.local
 endif
 
-" ConqueTerm wrapper
-function StartTerm()
-  execute 'ConqueTerm ' . $SHELL . ' --login'
-  setlocal listchars=tab:\ \
-endfunction
-
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 autocmd FocusGained * call s:UpdateNERDTree()
@@ -83,10 +77,6 @@ function s:UpdateNERDTree(...)
         wincmd p
       end
     endif
-  endif
-
-  if exists(":CommandTFlush") == 2
-    CommandTFlush
   endif
 endfunction
 
