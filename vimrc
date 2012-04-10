@@ -80,7 +80,8 @@ set nowritebackup
 " Color scheme
 set t_Co=256
 set background=dark
-colorscheme vsk_dark
+" colorscheme vsk_dark
+colorscheme Tomorrow-Night-Bright
 
 set wrap
 set tabstop=2
