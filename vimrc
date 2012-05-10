@@ -183,9 +183,9 @@ if has("autocmd")
   " set ff=unix
   au BufRead,BufNewFile * :set ff=unix
 
-  " use relative numbers when NOT in insert mode
-  autocmd InsertEnter * :set number
-  autocmd InsertLeave * :set relativenumber
+  " use relative numbers when in insert mode
+  autocmd InsertEnter * :set relativenumber
+  autocmd InsertLeave * :set number
 endif
 
 " Opens an edit command with the path of the currently edited file filled in
