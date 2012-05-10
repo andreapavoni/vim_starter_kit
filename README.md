@@ -57,6 +57,7 @@ add/remove them.
    * nerdtree
    * powerline
    * clam
+   * tabular (aka Tabularize)
 
 * Editing
    * nerdcommenter
@@ -72,7 +73,7 @@ add/remove them.
    * rails
    * coffee-script
    * javascript
-   * cucumber
+   * cucumber + patch to align tables (see [here](https://gist.github.com/287147))
    * haml
    * scss
    * rspec

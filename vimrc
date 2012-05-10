@@ -32,6 +32,7 @@ Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'sjl/clam.vim'
+Bundle 'godlygeek/tabular'
 
 " Syntaxes
 Bundle 'tpope/vim-haml'
@@ -60,16 +61,12 @@ set number
 set ruler
 let mapleader=","
 set mouse=a                       " enable mouse support
+set visualbell                    " No beeping.
 
 " Load local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
-
-set visualbell                    " No beeping.
-" xterm not recognized right by vim (but not on Linux)
-set term=xterm
-"set term=builtin_ansi
 
 " Backups and swap files
 set backupdir=~/.vim/backup
@@ -78,6 +75,8 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup
 
 " Color scheme
+" xterm not recognized right by vim (but not on Linux)
+set term=xterm
 set t_Co=256
 set background=dark
 " colorscheme vsk_dark
