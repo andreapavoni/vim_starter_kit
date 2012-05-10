@@ -31,6 +31,7 @@ Bundle 'vim-scripts/ZoomWin'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'tsaleh/vim-matchit'
+Bundle 'sjl/clam.vim'
 
 " Syntaxes
 Bundle 'tpope/vim-haml'
@@ -41,7 +42,6 @@ Bundle 'taq/vim-rspec'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'vim-scripts/Conque-Shell'
 Bundle 'othree/html5.vim'
 Bundle 'vim-ruby/vim-ruby'
 
@@ -221,8 +221,8 @@ vmap  <tab> =
 nmap  <tab> ==
 
 " navigate buffers
-:noremap <C-left> :bprev<CR>·
-:noremap <C-right> :bnext<CR>
+noremap <C-left> :bprev<CR>·
+noremap <C-right> :bnext<CR>
 
 " disable arrow keys, use hjkl
 noremap  <Up> ""
@@ -236,14 +236,7 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-" ConqueTerm
-map <Leader>co :ConqueTerm zsh<CR>
-
-" LustyBuffer Explorer
-map <Leader>l :LustyBufferExplorer<CR>
-
-" CommandT
-" map <Leader>t :CommandT<CR>
+" FuzzyFinder (was CommandT)
 map <Leader>t :FufCoverageFile<CR>
 
 " ignore Rubinius, Sass cache files

@@ -56,6 +56,7 @@ add/remove them.
    * fugitive
    * nerdtree
    * powerline
+   * clam
 
 * Editing
    * nerdcommenter
