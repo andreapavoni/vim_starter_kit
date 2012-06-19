@@ -84,4 +84,5 @@ add/remove them.
    * vividchalk
    * vsk_dark (default vim_starter_kit theme, dark version, generated with http://themes.sweyla.com)
    * Tomorrow Night Bright (see [Tomorrow Theme] (https://github.com/chriskempson/tomorrow-theme))
+   * jellybeans (default theme)
 

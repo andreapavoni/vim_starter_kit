@@ -49,6 +49,7 @@ Bundle 'vim-ruby/vim-ruby'
 " Themes
 Bundle 'tpope/vim-vividchalk'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'nanotech/jellybeans.vim'
 " END Vundle setup
 
 " Editing
@@ -79,8 +80,7 @@ set nowritebackup
 set term=xterm
 set t_Co=256
 set background=dark
-" colorscheme vsk_dark
-colorscheme Tomorrow-Night-Bright
+colorscheme jellybeans
 
 set wrap
 set tabstop=2
