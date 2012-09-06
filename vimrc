@@ -77,10 +77,20 @@ set nowritebackup
 
 " Color scheme
 " xterm not recognized right by vim (but not on Linux)
-set term=xterm
+" set term=xterm
 set t_Co=256
 set background=dark
 colorscheme jellybeans
+
+" When using tmux/screen, $TERM should be set to screen-256color. this is a
+" fix to use arrow keys correctly
+if &term =~ '^screen'
+  " tmux will send xterm-style keys when its xterm-keys option is on
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+endif
 
 set wrap
 set tabstop=2
@@ -200,11 +210,11 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
 " Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
 
 " Use modeline overrides
 set modeline
