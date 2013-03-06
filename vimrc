@@ -32,8 +32,8 @@ Bundle 'vim-scripts/ZoomWin'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'tsaleh/vim-matchit'
-Bundle 'sjl/clam.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'airblade/vim-gitgutter'
 
 " Syntaxes
 Bundle 'tpope/vim-haml'
@@ -155,6 +155,8 @@ map <Leader>brt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.
 " git status bar plugin
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
+" gitgutter
+let g:gitgutter_enabled = 0
 
 function s:setupWrapping()
   set wrap
@@ -250,6 +252,9 @@ nnoremap <c-l> <c-w>l
 
 " FuzzyFinder (was CommandT)
 map <Leader>t :FufCoverageFile<CR>
+
+" toggle git gutter
+map <Leader>g :ToggleGitGutter<CR>
 
 " ignore Rubinius, Sass cache files
 set wildignore+=*.rbc,*.scssc,*.sassc
