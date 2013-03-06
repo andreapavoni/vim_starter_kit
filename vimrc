@@ -11,6 +11,7 @@
 " Vim stuff
 set nocompatible
 filetype off
+set clipboard+=unnamed
 
 " START Vundle setup
 set rtp+=~/.vim/bundle/vundle/
@@ -50,6 +51,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'mnoble/tomorrow-night-vim'
 " END Vundle setup
 
 " Editing
@@ -80,7 +82,8 @@ set nowritebackup
 " set term=xterm
 set t_Co=256
 set background=dark
-colorscheme jellybeans
+colorscheme tomorrow-night-bright
+" colorscheme vsk_dark
 
 " When using tmux/screen, $TERM should be set to screen-256color. this is a
 " fix to use arrow keys correctly
@@ -156,7 +159,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 function s:setupWrapping()
   set wrap
   set wrapmargin=2
-  set textwidth=72
+  set textwidth=80
 endfunction
 
 function! s:clearWhitespaces()
@@ -230,8 +233,8 @@ vmap  <tab> =
 nmap  <tab> ==
 
 " navigate buffers
-noremap <C-left> :bprev<CR>·
-noremap <C-right> :bnext<CR>
+noremap <S-left> :bprev<CR>·
+noremap <S-right> :bnext<CR>
 
 " disable arrow keys, use hjkl
 noremap  <Up> ""
@@ -253,3 +256,8 @@ set wildignore+=*.rbc,*.scssc,*.sassc
 
 " find merge conflict markers
 nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
+" if has("gui_macvim")
+if  has("gui_running")
+	source ~/.vim/mvimrc
+endif
