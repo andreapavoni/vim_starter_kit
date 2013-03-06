@@ -1,24 +1,22 @@
-" color vwilight
-" set guifont=Menlo\ Regular:h14
-" set linespace=2
-set antialias
 
-" Default gui color scheme
+set t_Co=256
 set background=dark
-" colorscheme vsk_dark
-colorscheme Tomorrow-Night-Bright
+colorscheme tomorrow-night-bright
+" colorscheme macvim
 
-" Don't beep
+highlight NonText guifg=#dddddd
+highlight SpecialKey guifg=#dddddd
+
+set guifont=Monaco:h13
+set antialias
 set visualbell
 
 set guioptions-=T "remove toolbar
 set guioptions-=r " remove right scrollbar
 set guioptions-=m " remove menubar
 
-if has("gui_macvim")
-  " Fullscreen takes up entire screen
-  set fuoptions=maxhorz,maxvert
-end
+" Fullscreen takes up entire screen
+set fuoptions=maxhorz,maxvert
 
 " Include gvim config
 if filereadable(expand("~/.gvimrc.local"))
@@ -80,4 +78,3 @@ function s:UpdateNERDTree(...)
     endif
   endif
 endfunction
-
