@@ -22,7 +22,7 @@ end
 desc %(Make ~/.vimrc and ~/.gvimrc symlinks)
 task :link do
   print "create links..."
-  %w[vimrc gvimrc].each do |script|
+  %w[vimrc mvimrc].each do |script|
     dotfile = File.join(ENV['HOME'], ".#{script}")
     if File.exist? dotfile
       warn "~/.#{script} already exists"
