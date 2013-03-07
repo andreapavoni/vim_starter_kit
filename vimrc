@@ -20,7 +20,6 @@ Bundle 'gmarik/vundle'
 
 " Utils
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 Bundle 'michaeljsmith/vim-indent-object'
@@ -34,6 +33,7 @@ Bundle 'FuzzyFinder'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'godlygeek/tabular'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'vim-scripts/EasyGrep'
 
 " Syntaxes
 Bundle 'tpope/vim-haml'
@@ -157,6 +157,10 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 
 " gitgutter
 let g:gitgutter_enabled = 0
+
+" EasyGrep
+" use system grep instead of vimgrep
+let g:EasyGrepCommand=1
 
 function s:setupWrapping()
   set wrap
