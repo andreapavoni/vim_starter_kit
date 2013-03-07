@@ -50,14 +50,14 @@ I use the following plugins by default, you can edit the bundles in ```vimrc``` 
 add/remove them.
 
 * Utils
-   * ack
    * FuzzyFinder
    * git
    * fugitive
    * nerdtree
    * powerline
-   * clam
    * tabular (aka Tabularize)
+   * vim-gutter (shows git diff in the gutter)
+   * EasyGrep
 
 * Editing
    * nerdcommenter
@@ -82,7 +82,7 @@ add/remove them.
 * Themes
    * solarized
    * vividchalk
-   * vsk_dark (default vim_starter_kit theme, dark version, generated with http://themes.sweyla.com)
+   * vsk_dark (generated with http://themes.sweyla.com)
    * Tomorrow Night Bright (see [Tomorrow Theme] (https://github.com/chriskempson/tomorrow-theme))
-   * jellybeans (default theme)
+   * jellybeans
 
