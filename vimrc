@@ -33,7 +33,8 @@ Bundle 'FuzzyFinder'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'godlygeek/tabular'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'vim-scripts/EasyGrep'
+Bundle 'henrik/git-grep-vim'
+Bundle 'henrik/vim-qargs'
 
 " Syntaxes
 Bundle 'tpope/vim-haml'
@@ -52,6 +53,7 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'mnoble/tomorrow-night-vim'
+
 " END Vundle setup
 
 " Editing
@@ -83,7 +85,6 @@ set nowritebackup
 set t_Co=256
 set background=dark
 colorscheme tomorrow-night-bright
-" colorscheme vsk_dark
 
 " When using tmux/screen, $TERM should be set to screen-256color. this is a
 " fix to use arrow keys correctly
