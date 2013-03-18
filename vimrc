@@ -35,6 +35,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'henrik/git-grep-vim'
 Bundle 'henrik/vim-qargs'
+Bundle 'Sirupsen/vim-execrus'
 
 " Syntaxes
 Bundle 'tpope/vim-haml'
@@ -266,6 +267,10 @@ set wildignore+=*.rbc,*.scssc,*.sassc
 
 " find merge conflict markers
 nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
+" Execrus
+map <C-E> :call g:Execrus()<CR>
+map <C-\> :call g:Execrus('alternative')<CR>
 
 " if has("gui_macvim")
 if  has("gui_running")
