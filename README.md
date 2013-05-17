@@ -78,6 +78,7 @@ add/remove them.
    * scss
    * rspec
    * html5
+   * go
 
 * Themes
    * solarized
@@ -85,4 +86,5 @@ add/remove them.
    * vsk_dark (generated with http://themes.sweyla.com)
    * Tomorrow Night Bright (see [Tomorrow Theme] (https://github.com/chriskempson/tomorrow-theme))
    * jellybeans
+   * distinguished ([a forked version](https://github.com/apeacox/vim-distinguished))
 
