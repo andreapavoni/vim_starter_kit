@@ -55,6 +55,7 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'mnoble/tomorrow-night-vim'
+Bundle 'apeacox/vim-distinguished'
 
 " END Vundle setup
 
@@ -86,7 +87,7 @@ set nowritebackup
 " set term=xterm
 set t_Co=256
 set background=dark
-colorscheme tomorrow-night-bright
+colorscheme distinguished
 
 " When using tmux/screen, $TERM should be set to screen-256color. this is a
 " fix to use arrow keys correctly
