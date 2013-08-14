@@ -35,7 +35,7 @@ files inside the ".vim" directory.
 * 2 spaces, no tabs
 * incremental, case-insensitive search
 * 'Leader' character mapped to "," (comma)
-* `,t` opens file search via FuzzyFinder plugin (instead of Command-T)
+* `,.` opens CtrlP to find files and buffers (similar to Command-T and FuzzyFinder)
 * `<C-j/k/h/l>` switches between windows (no need to prepend `<C-w>`)
 * cursor keys for movement disabled!
 * `,n` open/closes NerdTree
@@ -50,7 +50,7 @@ I use the following plugins by default, you can edit the bundles in ```vimrc``` 
 add/remove them.
 
 * Utils
-   * FuzzyFinder
+   * CtrlP
    * git
    * fugitive
    * nerdtree
@@ -87,4 +87,5 @@ add/remove them.
    * Tomorrow Night Bright (see [Tomorrow Theme] (https://github.com/chriskempson/tomorrow-theme))
    * jellybeans
    * distinguished ([a forked version](https://github.com/apeacox/vim-distinguished))
+   * molokai
 
