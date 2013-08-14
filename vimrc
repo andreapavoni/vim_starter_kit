@@ -56,6 +56,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'mnoble/tomorrow-night-vim'
 Bundle 'apeacox/vim-distinguished'
+Bundle 'tomasr/molokai'
 
 " END Vundle setup
 
