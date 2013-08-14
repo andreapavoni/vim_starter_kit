@@ -29,13 +29,13 @@ Bundle 'tpope/vim-surround'
 Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'godlygeek/tabular'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'henrik/git-grep-vim'
 Bundle 'henrik/vim-qargs'
 Bundle 'Sirupsen/vim-execrus'
+Bundle 'kien/ctrlp.vim'
 
 " Syntaxes
 Bundle 'tpope/vim-haml'
@@ -259,8 +259,14 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-" FuzzyFinder (was CommandT)
-map <Leader>t :FufCoverageFile<CR>
+" FuzzyFinder (was CommandT) [DEPRECTED?]
+" map <Leader>t :FufCoverageFile<CR>
+
+" CtrlP
+map <Leader>. :CtrlP<CR>
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_map = '<Leader>p'
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 " toggle git gutter
 map <Leader>g :ToggleGitGutter<CR>
