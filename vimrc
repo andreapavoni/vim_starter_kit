@@ -140,7 +140,6 @@ set noequalalways
 
 " NERDTree
 let NERDTreeIgnore=['\.rbc$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
 map \\ :NERDTreeToggle<CR>
 
 "close NERDTree if open and delete current buffer
@@ -265,7 +264,7 @@ nnoremap <c-l> <c-w>l
 " map <Leader>t :FufCoverageFile<CR>
 
 " CtrlP
-map <Leader>. :CtrlP<CR>
+map <Leader>n :CtrlP<CR>
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlPMixed'
@@ -284,6 +283,6 @@ map <C-E> :call g:Execrus()<CR>
 map <C-\> :call g:Execrus('alternative')<CR>
 
 " if has("gui_macvim")
-if  has("gui_running")
+if has("gui_running")
 	source ~/.vim/mvimrc
 endif

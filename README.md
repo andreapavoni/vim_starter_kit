@@ -37,8 +37,10 @@ files inside the ".vim" directory.
 * 'Leader' character mapped to "," (comma)
 * `,.` opens CtrlP to find files and buffers (similar to Command-T and FuzzyFinder)
 * `<C-j/k/h/l>` switches between windows (no need to prepend `<C-w>`)
+* `<C-left/right>` switches between buffers (and shows buffer list in command line meanwhile)
 * cursor keys for movement disabled!
-* `,n` open/closes NerdTree
+* `\\` open/closes NerdTree
+* `,n` open CtrlP
 * `F5` re-indent file
 * `,cc` add comment to current (or selected) lines
 
