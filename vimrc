@@ -22,13 +22,13 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
-Bundle 'michaeljsmith/vim-indent-object'
+" Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'wycats/nerdtree'
 Bundle 'ddollar/nerdcommenter'
 Bundle 'tpope/vim-surround'
 Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/ZoomWin'
-Bundle 'L9'
+" Bundle 'L9'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'godlygeek/tabular'
 Bundle 'airblade/vim-gitgutter'
@@ -162,6 +162,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 
 " gitgutter
 let g:gitgutter_enabled = 0
+let g:gitgutter_highlight_lines = 1
 
 " EasyGrep
 " use system grep instead of vimgrep

@@ -55,9 +55,10 @@ add/remove them.
    * fugitive
    * nerdtree
    * powerline
-   * tabular (aka Tabularize)
    * vim-gutter (shows git diff in the gutter)
-   * EasyGrep
+   * git-grep (only find files tracked by git)
+   * qargs (exec batch commands on opened buffers)
+   * execrus (exec custom actions)
 
 * Editing
    * nerdcommenter
@@ -66,6 +67,7 @@ add/remove them.
    * supertab
    * snipmate
    * matchit
+   * tabular (aka Tabularize)
 
 * Syntaxes
    * markdown
