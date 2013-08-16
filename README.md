@@ -59,6 +59,7 @@ add/remove them.
    * git-grep (only find files tracked by git)
    * qargs (exec batch commands on opened buffers)
    * execrus (exec custom actions)
+   * buftabs (show open buffers in command line when needed)
 
 * Editing
    * nerdcommenter

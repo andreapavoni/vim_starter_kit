@@ -36,6 +36,7 @@ Bundle 'henrik/git-grep-vim'
 Bundle 'henrik/vim-qargs'
 Bundle 'Sirupsen/vim-execrus'
 Bundle 'kien/ctrlp.vim'
+Bundle 'vim-scripts/buftabs'
 
 " Syntaxes
 Bundle 'tpope/vim-haml'
