@@ -56,12 +56,12 @@ add/remove them.
    * git
    * fugitive
    * nerdtree
-   * powerline
+   * airline (replaces powerline)
    * vim-gutter (shows git diff in the gutter)
    * git-grep (only find files tracked by git)
    * qargs (exec batch commands on opened buffers)
    * execrus (exec custom actions)
-   * buftabs (show open buffers in command line when needed)
+   * bufferline (show open buffers in statusline)
 
 * Editing
    * nerdcommenter
