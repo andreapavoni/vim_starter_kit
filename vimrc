@@ -19,16 +19,15 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Utils
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
+Bundle 'bling/vim-bufferline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
-" Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'wycats/nerdtree'
 Bundle 'ddollar/nerdcommenter'
 Bundle 'tpope/vim-surround'
 Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/ZoomWin'
-" Bundle 'L9'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'godlygeek/tabular'
 Bundle 'airblade/vim-gitgutter'
@@ -36,7 +35,6 @@ Bundle 'henrik/git-grep-vim'
 Bundle 'henrik/vim-qargs'
 Bundle 'Sirupsen/vim-execrus'
 Bundle 'kien/ctrlp.vim'
-Bundle 'vim-scripts/buftabs'
 
 " Syntaxes
 Bundle 'tpope/vim-haml'
@@ -157,8 +155,8 @@ nmap <leader>cc <plug>NERDCommenterToggle
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <Leader>brt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
 
-" git status bar plugin
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+" statusline config (not used in favor of airline)
+" set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " gitgutter
 let g:gitgutter_enabled = 0
@@ -208,8 +206,8 @@ if has("autocmd")
   au BufRead,BufNewFile * :set ff=unix
 
   " use relative numbers when in insert mode
-  autocmd InsertEnter * :set relativenumber
-  autocmd InsertLeave * :set number
+  " autocmd InsertEnter * :set relativenumber
+  " autocmd InsertLeave * :set number
 endif
 
 " Opens an edit command with the path of the currently edited file filled in
@@ -281,6 +279,35 @@ nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 " Execrus
 map <C-E> :call g:Execrus()<CR>
 map <C-\> :call g:Execrus('alternative')<CR>
+
+" Bufferline
+let g:bufferline_echo = 0 " echo to command bar?
+let g:bufferline_show_bufnr = 0 " show buffer number?
+let g:bufferline_rotate = 1 " rotate and scroll buffer names
+
+" Airline
+let g:airline_theme="powerlineish"
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_linecolumn_prefix = '␤ '
+let g:airline_branch_prefix = '⎇ '
+let g:airline_paste_symbol = 'Þ'
+" let g:airline_whitespace_symbol = 'Ξ'
+let g:airline_section_warning = ''
+
 
 " if has("gui_macvim")
 if has("gui_running")
