@@ -1,6 +1,9 @@
 Vim starter kit (yet another one)
 ==========================
 
+
+# WARNING: these configs are outdated. if you're still interested in them (along with other cool stuff), go to my [dotfiles repository](https://github.com/apeacox/dotfiles).
+
 This configuration started as a Janus fork where I put my own configs, plugins
 and shortcuts. But I was quite unhappy with the way the plugins were managed, so
 I re-started from [Mislav](https://github.com/mislav/vimfiles)'s leaner config, then I've added my own customizations, ending to a completely different result.
